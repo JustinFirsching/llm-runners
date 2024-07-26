@@ -23,16 +23,20 @@ class ModelVersion(Enum):
     gemini15flash = 13,
     gemini15pro = 14,
 
+    @staticmethod
     def as_list():
         return [e.name for e in ModelVersion]
 
+    @staticmethod
     def as_list_from_str(input:str):
         list_str = str.split(input,',')
         return [ModelVersion[item] for item in list_str]
-    
+
+    @staticmethod
     def embeddings_list():
         return [ModelVersion.textembeddings3large, ModelVersion.textembeddings3small]
-    
+
+    @staticmethod
     def vision_list():
         return [ModelVersion.gpt4o0513]
 
@@ -50,6 +54,7 @@ class Region(Enum):
     SouthIndia = 11
     EastUS2 = 12
 
+    @staticmethod
     def as_list():
         return [e.name for e in Region]
 
